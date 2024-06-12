@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>| Calculadora de Investimento |</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+<div id="background" class="background"></div>
+<div class="container">
+    <h1>Calculadora de Investimentos</h1>
+    <form id="InvestimentForm">
+        <label for="InvestimentAmount">Valor do Investimento ex: (R$6000):</label>
+        <input type="number" id="InvestimentAmount" name="InvestimentAmount" required>
+        <label for="product">Escolha o Produto do Agronegócio Capixaba:</label>
+        <select id="product" name="product" required>
+            <option value="" disabled selected>Selecione o Produto</option>
+            <optgroup label="Grãos">
+                <option value="café">Café (conilon)</option>
+                <option value="milho">Milho (verde)</option>
+                <option value="feijão">Feijão (carioca)</option>
+                <option value="arroz">Arroz (sequeiro)</option>
+            </optgroup>
+            <optgroup label="Frutas">
+                <option value="mamão">Mamão (papaia)</option>
+                <option value="banana">Banana (prata)</option>
+                <option value="abacaxi">Abacaxi (pérola)</option>
+                <option value="maracujá">Maracujá (passiflora)</option>
+            </optgroup>
+            <optgroup label="Hortaliças">
+                <option value="tomate">Tomate (saladete)</option>
+                <option value="alface">Alface (crespa)</option>
+                <option value="cenoura">Cenoura (polpa alaranjada)</option>
+                <option value="pimentão">Pimentão (capsicum annuum)</option>
+                <option value="beterraba">Beterraba</option>
+            </optgroup>
+            <optgroup label="Pecuária">
+                <option value="gado">Gado (corte)</option>
+                <option value="gado">Gado (leiteiro)</option>
+                <option value="frango">Frango (corte)</option>
+                <option value="porco">Porco (convencional)</option>
+            </optgroup>
+        </select>
+        <label for="quantity">Quantidade em (Kilogramas/Unidade):</label>
+        <input type="text" id="quantity" name="quantity">
+        <div id="sacksDiv" style="display:none;">
+            <label for="sacks">Quantidade de Sacas:</label>
+            <input type="text" id="sacks" name="sacks" readonly>
+        </div>
+        <label for="timeFrame">Tempo esperado em (anos)</label>
+        <input type="number" id="timeFrame" name="timeFrame" required>
+        <button type="submit" id="submitButton">Calcular</button>
+        <p class="error-message" id="errorMessage" style="display: none;"></p>
+    </form>
+    <div id="chart"></div>
+    <div id="cotacoesList"></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
